@@ -1,8 +1,8 @@
 
 import re   
   
-email_redux = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'  
-  
+email_redux = '^[a-zA-Z0-9]+[\._]?[a-zA-Z0-9]+[@]\w+[.]\w{3}$'  
+
 def validate_email(email):   
   
     if(re.search(email_redux,email)):   
@@ -10,7 +10,6 @@ def validate_email(email):
     else:   
             return False
 pass
-
 
 
 phone_redux_form1 = '^09[0-9]{9}$'

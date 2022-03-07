@@ -2,7 +2,7 @@
 
 class mineSwaper :
     maps = [] 
-    def __init__(self , row , col ):
+    def __init__(self , col , row ):
         
         self.row = row
         self.col = col 
@@ -33,21 +33,21 @@ class mineSwaper :
                                  mineSwaper.maps[x+i][y+j] += 1
        
         
-x = int(input())
-y = int(input())
-
+x, y = [int(x) for x in input().split()]
 mswap = mineSwaper(x,y) 
-mswap.BombIt(3,3)
-mswap.BombIt(0,2)
-mswap.BombIt(1,2)
-mswap.BombIt(1,0)
-mswap.BombIt(0,0)
-# mswap.BombIt(1,1)
-res = mswap.getList()
 
-for  i in range(y) :
-    for  j in range(x) :
-        print(res[j][i],' ' , end='')
+
+number_of_bomb = int(input())
+
+for t in range(number_of_bomb):
+    x1 , y1 = [int(x) for x in input().split()]
+    mswap.BombIt(x1-1,y1-1)
+
+result_of_mineswaper = mswap.getList()
+
+for  i in range(x) :
+    for  j in range(y) :
+        print(result_of_mineswaper[i][j],' ' , end='')
     print()
 
 

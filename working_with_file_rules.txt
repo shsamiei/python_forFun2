@@ -1,0 +1,38 @@
+
+f = open("mytxt.txt" , 'r')
+print(f.read())
+
+# read() function return the content of mytxt.txt
+# if you give int argument to read() function 
+# it will return characters as many as you say for e.g. 
+
+print(f.read(6))
+
+# it will return 6 char which they didnt read yet 
+
+
+# we use write() function for writing in file , whatchout the write functio
+# do not put \n at the end of line so don't forget to put it there 
+# 
+# for example :  
+# f = open("mytxt.txt" , 'w')
+# line = hello to everybody :)
+# f.write(line + '\n' )
+
+
+# we using tell() function to find the index pointer 
+# we use with for get rid of open and close the file and ... 
+
+# we can not read big files like this : 
+
+def csv_reader(path):
+    file = open(path)
+    result = file.read().split("\n")
+    return result
+
+# because they are really big so we can instead using generators : 
+
+def csv_reader(path):
+    with open(path) as file:
+        for row in file:
+            yield row

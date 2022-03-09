@@ -1,8 +1,5 @@
 
-
-
 from curses.ascii import isdigit
-
 
 def process(path) :
         def csv_reader(path):
